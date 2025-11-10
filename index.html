@@ -1,1 +1,86 @@
-<!doctype html><html><head><meta charset='utf-8'><title>GHT Companion</title></head><body><h1>General Horizon Theory Companion</h1><p>Refreshed package.</p><script src='src/main.js'></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>General Horizon Theory – For the Rest of Us</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="container">
+  <section class="hero">
+    <span class="tag">General Horizon Theory</span>
+    <h1>The Universal Language of Balance — For the Rest of Us</h1>
+    <p>Why horizons form when systems are full — and how this helps us <strong>predict</strong> overloads in physics, tech, and fire weather.</p>
+    <div><button class="button" onclick="document.getElementById('predict').scrollIntoView({behavior:'smooth'})">Jump to Prediction</button></div>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h3>What’s the Horizon Principle?</h3>
+      <p>When <em>flow</em> (energy, matter, or information) pushes past <em>capacity</em>, systems form <strong>horizons</strong>—boundaries that protect causal order.</p>
+      <div class="figure"><img src="assets/images/coffee_overflow.svg" width="300" alt="Coffee overflow"/><div class="small">Coffee cup brim = a simple horizon. Overflow marks the limit.</div></div>
+    </article>
+    <article class="card">
+      <h3>Where does it show up?</h3>
+      <ul><li>Black holes → event horizon</li><li>Fog & optics → smoky light wall</li><li>Plasma → sheaths/shocks</li><li>Networks & traffic → congestion</li></ul>
+      <div class="figure"><img src="assets/images/traffic_horizon.svg" width="300" alt="Traffic jam"/><div class="small">Jam front = movement horizon.</div></div>
+    </article>
+  </section>
+
+  <section class="card" id="predict">
+    <h3 class="kicker">Prediction: the practical superpower</h3>
+    <p><strong>If you can estimate Flow and Capacity, you can forecast horizon formation.</strong></p>
+<pre><code>Heuristic:  if  Flow / Capacity  ≳ 1  →  Horizon will form</code></pre>
+    <div class="row">
+      <div class="figure"><img src="assets/images/blackhole_horizon.svg" width="300" alt="Black hole"/><div class="small">Mass packed tight → event horizon.</div></div>
+      <div class="figure"><img src="assets/images/network_horizon.svg" width="300" alt="Network congestion"/><div class="small">Buffer full → information horizon.</div></div>
+    </div>
+    <div class="callout"><strong>Variables:</strong> Flow = per-time push; Capacity = safe carry; Horizon = boundary when Flow ≳ Capacity.</div>
+  </section>
+
+  <section class="card">
+    <h3>Predictive Toolkit</h3>
+    <p>Thresholds, triggers, and example playbooks (Hawaii wind events, Bald Mountain VA 2025, and Virginia seasonal patterns).</p>
+    <a class="button" href="docs/predictive_toolkit.md">Open Toolkit (Markdown)</a>
+  </section>
+
+  <section class="card" id="backrad">
+    <h3 class="kicker">Interactive — Back-Radiation Calculator</h3>
+    <div class="tabbar">
+      <button id="tab-atm" class="active">Atmosphere → Ground</button>
+      <button id="tab-fire">Fire → Fuel</button>
+    </div>
+
+    <div id="panel-atm">
+      <div class="small">Night “blanket”: the sky radiates warmth back down. Clear, dry → weak; cloudy, humid → strong.</div>
+      <div class="input"><label>Surface temp (°C)</label><input id="Ts" type="range" min="-10" max="50" value="17" step="1"><span class="value" id="Ts_v">17</span></div>
+      <div class="input"><label>Air/sky temp (°C)</label><input id="Ta" type="range" min="-20" max="40" value="12" step="1"><span class="value" id="Ta_v">12</span></div>
+      <div class="input"><label>Sky emissivity (0–1)</label><input id="ea" type="range" min="0.4" max="1.0" value="0.78" step="0.01"><span class="value" id="ea_v">0.78</span></div>
+      <div class="input"><label>Surface emissivity</label><input id="es" type="range" min="0.85" max="1.0" value="0.97" step="0.01"><span class="value" id="es_v">0.97</span></div>
+      <hr/>
+      <div>Downwelling LW: <span class="badge" id="LWd_badge"><span id="LWd">—</span> W/m²</span></div>
+      <div>Upwelling LW: <span class="badge" id="LWu_badge"><span id="LWu">—</span> W/m²</span></div>
+      <div>Net LW at surface: <span class="badge" id="LWnet_badge"><span id="LWnet">—</span> W/m²</span></div>
+      <div class="small">Blue (negative) = cooling; Orange (positive) = net warming.</div>
+    </div>
+
+    <div id="panel-fire" hidden>
+      <div class="small">Radiant “glow” from flames that pre-heats nearby fuels. Closer/bigger/hotter flames → higher flux.</div>
+      <div class="input"><label>Flame temp (K)</label><input id="Tf" type="range" min="900" max="1600" value="1200" step="10"><span class="value" id="Tf_v">1200</span></div>
+      <div class="input"><label>Target temp (K)</label><input id="Tt" type="range" min="270" max="340" value="300" step="1"><span class="value" id="Tt_v">300</span></div>
+      <div class="input"><label>View factor (0–1)</label><input id="Fv" type="range" min="0.05" max="0.8" value="0.20" step="0.01"><span class="value" id="Fv_v">0.20</span></div>
+      <div class="input"><label>Transmissivity (0–1)</label><input id="tau" type="range" min="0.3" max="1.0" value="0.80" step="0.01"><span class="value" id="tau_v">0.80</span></div>
+      <div class="input"><label>Flame emissivity</label><input id="ef" type="range" min="0.85" max="1.0" value="0.95" step="0.01"><span class="value" id="ef_v">0.95</span></div>
+      <hr/>
+      <div>Radiant heat to target: <span class="badge" id="qrad_badge"><span id="qrad">—</span> W/m²</span></div>
+      <div id="qrad_msg" class="small"></div>
+    </div>
+  </section>
+
+  <p class="footer">© 2025 General Horizon Theory Companion. Built for clarity and prediction.</p>
+</div>
+<script src="src/main.js"></script>
+<script src="src/elyra_companion_panel.js"></script>
+</body>
+</html>
