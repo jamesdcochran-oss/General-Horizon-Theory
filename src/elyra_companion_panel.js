@@ -1,0 +1,1 @@
+customElements.define('gh-companion', class extends HTMLElement{connectedCallback(){this.innerHTML='GHT panel';}});
