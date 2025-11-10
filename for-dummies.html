@@ -6,17 +6,24 @@
   <title>General Horizon Theory — For Dummies (A Friendly Companion)</title>
   <link rel="stylesheet" href="styles.css"/>
   <style>
-    /* page-specific tweaks (rides on top of styles.css) */
+    /* Page-specific sprinkles that sit on top of styles.css */
     .lead{font-size:1.1rem;color:var(--muted)}
-    .chunk{background:var(--card);border:1px solid #1a2558;padding:18px;border-radius:16px;margin:14px 0}
-    .num{display:inline-block;width:1.6rem;height:1.6rem;line-height:1.6rem;text-align:center;
-         border-radius:999px;background:#0f1a45;border:1px solid #22306a;margin-right:8px}
+    .chunk{background:var(--card);border:1px solid #1a2558;padding:22px;border-radius:16px;margin:16px 0}
+    .num{display:inline-block;width:1.65rem;height:1.65rem;line-height:1.65rem;text-align:center;border-radius:999px;background:#0f1a45;border:1px solid #22306a;margin-right:8px}
     .mini{font-size:.95rem;color:var(--muted)}
     .grid2{display:grid;gap:16px}
-    @media(min-width:880px){.grid2{grid-template-columns:1fr 1fr}}
-    .check{border-left:4px solid var(--accent);padding:10px;background:#0e173e;border-radius:10px}
+    .grid3{display:grid;gap:14px}
+    @media(min-width:880px){.grid2{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr 1fr}}
+    .check{border-left:4px solid var(--accent);padding:10px 12px;background:#0e173e;border-radius:10px}
+    .warn{border-left:4px solid #b0932b;padding:10px 12px;background:#0c1433;border-radius:10px}
+    .crit{border-left:4px solid #b0512b;padding:10px 12px;background:#0c1433;border-radius:10px}
     .q{font-weight:700}
     .vars code{margin-right:6px;display:inline-block}
+    .rule{height:1px;background:#22306a;margin:12px 0}
+    .chapter{font-size:.85rem;letter-spacing:.08em;color:var(--accent2);text-transform:uppercase}
+    .big{font-size:1.15rem}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .figcap{font-size:.85rem;color:var(--muted);margin-top:6px;text-align:center}
   </style>
 </head>
 <body>
@@ -25,120 +32,355 @@
       <span class="tag">General Horizon Theory</span>
       <h1>For Dummies — The Friendly Companion</h1>
       <p class="lead">
-        Here’s the plain-English, metaphor-heavy tour. Light math, a few jokes, and diagrams that actually help.
-        Use this when you want the “what and why” before the “prove it.”
+        This is the plain-English, metaphor-heavy tour of General Horizon Theory (GHT). We’ll walk it like a story,
+        keep the math light, crack a smile here and there, and still treat the serious bits with respect.
       </p>
-      <div>
+      <div class="cta">
+        <a class="button" href="index.html">Back to Main Site</a>
+        <a class="button" href="#toolkit">Skip to Toolkit</a>
+        <a class="button" href="index.html#backrad">Open the Back-Radiation Calculator</a>
+      </div>
+    </section>
+
+    <!-- Chapter 1 -->
+    <section class="chunk">
+      <div class="chapter">Chapter 1</div>
+      <h3>Why the World Builds Horizons</h3>
+      <p class="big">
+        The world loves balance. When you push a system past what it can comfortably carry, it draws a line.
+        We call that line a <em>horizon</em>—a boundary that shows up to keep cause and effect from falling apart.
+      </p>
+      <p>
+        You’ve seen horizons in action all week. The coffee cup that overflows, the highway that seizes into a jam,
+        the Wi-Fi that crawls when everyone’s on a video call—that’s not “bad luck,” that’s your first lesson in
+        <strong>Flow</strong> and <strong>Capacity</strong>. Push enough flow through a limited channel and a boundary forms.
+        Nature is basically saying, “Thanks for the enthusiasm; here’s a speed limit.”
+      </p>
+      <div class="figure">
+        <img src="assets/images/coffee_overflow.svg" width="320" alt="Coffee horizon"/>
+        <div class="figcap">Overflow is a boundary announcing: capacity reached.</div>
+      </div>
+      <p>
+        This little dance scales up shockingly far. Optics? Fog becomes a wall your headlights can’t pierce. Plasma physics?
+        Energy at an interface forms a sheath or shock that acts like an invisible fence. Black holes? Pack enough mass into a
+        tiny region and the escape speed hits light speed: <em>event horizon</em>. No rocket, no flashlight, no “but I really want to”
+        crosses that line.
+      </p>
+      <div class="check">
+        <strong>Takeaway:</strong> Horizons are not glitches. They’re how systems protect causal order when you ask too much of them.
+      </div>
+    </section>
+
+    <!-- Chapter 2 -->
+    <section class="chunk">
+      <div class="chapter">Chapter 2</div>
+      <h3>The Coffee Cup Universe (Flow, Capacity, Horizon)</h3>
+      <p>
+        Let’s give our three main characters friendly names:
+      </p>
+      <ul>
+        <li><strong>Flow</strong> — how much you push through per unit time (cars/hour, Mbps, liters/minute, acres/day).</li>
+        <li><strong>Capacity</strong> — what the system can safely carry (lane throughput, link bandwidth, pipe size, crew bandwidth).</li>
+        <li><strong>Horizon</strong> — the boundary that shows up when Flow ≳ Capacity (jam, overflow, shock, event horizon).</li>
+      </ul>
+      <div class="vars">
+<pre><code>Heuristic:   if  Flow / Capacity  ≳ 1   →   a Horizon will form
+</code></pre>
+      </div>
+      <p>
+        You don’t need calculus here. Treat the ratio like a speedometer. When the needle kisses 1.0,
+        get ready for boundaries. The system is quietly switching modes: “normal” to “limited.”
+      </p>
+
+      <div class="grid2">
+        <div>
+          <h4>Traffic (movement horizon)</h4>
+          <p>
+            When cars/hour exceeds lane capacity, the jam front moves backward like a literal wall. You feel it:
+            your car is fine, but the <em>system</em> says, “no further.” That wall is a horizon—mobility beyond
+            it becomes impossible without changing the system itself.
+          </p>
+          <div class="figure">
+            <img src="assets/images/traffic_horizon.svg" width="300" alt="Traffic horizon"/>
+            <div class="figcap">The jam front marks the boundary of movement.</div>
+          </div>
+        </div>
+        <div>
+          <h4>Networks (information horizon)</h4>
+          <p>
+            A router buffer fills. Packets get queued or dropped. Your app stalls—not because your computer forgot
+            how to compute, but because a horizon formed around the link. On one side: smooth throughput. On the other:
+            <em>nope</em>.
+          </p>
+          <div class="figure">
+            <img src="assets/images/network_horizon.svg" width="300" alt="Network horizon"/>
+            <div class="figcap">Buffer full → drop/queue = the info horizon.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="warn">
+        <strong>Friendly caution:</strong> “Pushing harder” past capacity often makes things worse. That’s like yelling at a traffic jam.
+        Design a soft landing instead (buffers, fuses, rate limits), and the boundary gets kinder.
+      </div>
+    </section>
+
+    <!-- Chapter 3 -->
+    <section class="chunk">
+      <div class="chapter">Chapter 3</div>
+      <h3>The Math You Can Handle (labels, not headaches)</h3>
+      <p>
+        We’ll keep the math light and honest. Horizons are threshold stories. The details differ by domain, but the
+        guiding idea is the same: a limit exists; cross it and the rules change.
+      </p>
+      <h4>3.1 The friendly ratio</h4>
+      <p>
+        You can put <code>Flow/Capacity</code> on a gauge and mark three ticks: <strong>0.9</strong>, <strong>1.0</strong>, <strong>1.1</strong>.
+        That’s enough to forecast trouble. Above 1.0? Expect a horizon. At 0.95 all day? You’re living dangerously close to the edge.
+      </p>
+
+      <h4>3.2 An aside from gravity (because space is dramatic)</h4>
+      <p>
+        In black holes, the horizon radius (for a non-rotating one) is <code>r = 2GM / c²</code>.
+        That’s the point where escape speed equals the speed of light. If you don’t love the letters, read it as:
+        “Pack enough mass into a small enough space and you create an inescapable boundary.”
+      </p>
+
+      <h4>3.3 Back-radiation (the heat echo you can feel)</h4>
+      <div class="grid2">
+        <div>
+          <p>
+            <strong>A) Sky → Ground.</strong> At night, the ground radiates heat upward, the sky radiates some back down.
+            Clear, dry skies send less back (you cool more). Cloudy, humid skies act like a blanket (you cool less).
+          </p>
+          <p class="mini">
+            If you check the main site’s calculator, the “downwelling” number is the sky’s warmth coming back down. The
+            “upwelling” number is the ground’s heat leaving. Their difference is your net longwave—how fast things cool.
+          </p>
+        </div>
+        <div>
+          <p>
+            <strong>B) Fire → Fuel.</strong> Flames glow onto nearby fuels. Bigger/hotter/closer flames with clearer air mean more radiant shove.
+            That pre-heats fine fuels and makes ignition easier. Step back, add moisture, or block line-of-sight and you slash the radiant load.
+          </p>
+          <p class="mini">
+            In the calculator, you’ll see how “view factor” and “transmissivity” change the radiant heat that actually reaches a target.
+          </p>
+        </div>
+      </div>
+
+      <div class="check">
+        <strong>Use the ratio like a dashboard:</strong> It’s not about perfect physics; it’s about knowing which way the needle moves and acting early.
+      </div>
+    </section>
+
+    <!-- Chapter 4 -->
+    <section class="chunk" id="toolkit">
+      <div class="chapter">Chapter 4</div>
+      <h3>The Predictive Toolkit (how you actually use this)</h3>
+      <p class="big">
+        GHT is useful because it’s predictive. If you can estimate Flow and Capacity—even approximately—you can
+        forecast where horizons will form and intervene <em>before</em> things break.
+      </p>
+
+      <h4>4.1 The four pillars</h4>
+      <div class="grid2">
+        <div>
+          <p><span class="num">1</span><strong>Ratio</strong> — Track <code>Flow/Capacity</code>. Put it on a gauge. Mark danger at ~1.0.</p>
+          <p><span class="num">2</span><strong>Leads</strong> — Watch the pushers: wind, demand spikes, drought, ignition pressure, rumor velocity.</p>
+        </div>
+        <div>
+          <p><span class="num">3</span><strong>Lags</strong> — Monitor eroders: fatigue, access limits, buffer fill, maintenance debt.</p>
+          <p><span class="num">4</span><strong>Soft horizons</strong> — Add buffers/fuses so limits bend instead of shatter.</p>
+        </div>
+      </div>
+
+      <h4>4.2 The practical loop</h4>
+      <ol>
+        <li><strong>Measure:</strong> even crude numbers beat vibes. (Wind, RH, requests/minute, vehicles/hour.)</li>
+        <li><strong>Compare:</strong> put them against capacity (crew availability, bandwidth, lanes, fuel moisture).</li>
+        <li><strong>Buffer:</strong> rate-limit, add staff, pre-stage, or schedule windows. Make the boundary kinder.</li>
+      </ol>
+
+      <div class="rule"></div>
+      <h4>4.3 Playbooks (short, real, runnable)</h4>
+
+      <div class="grid2">
+        <div>
+          <h5>Hawaii wind-driven wildfire</h5>
+          <ul>
+            <li><strong>Pushers (Flow ↑):</strong> extreme gradient winds &amp; gusts (50–60+ mph), very low RH, cured grasses, utility/vegetation faults.</li>
+            <li><strong>Erasers (Capacity ↓):</strong> unsafe ops in severe gusts; comms/egress degrade.</li>
+            <li><strong>Triggers:</strong> pre-emptive circuit de-energization at thresholds; upwind resource staging; corridor hardening; multi-channel alerts.</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Bald Mountain (VA, 2025)</h5>
+          <ul>
+            <li><strong>Pushers (Flow ↑):</strong> post-frontal NW gusts (25–40 mph on ridges), RH &lt; 25–30%, receptive 1-hr fuels, terrain spotting.</li>
+            <li><strong>Erasers (Capacity ↓):</strong> steep terrain, narrow burnout windows, night ops limits.</li>
+            <li><strong>Triggers:</strong> indirect + anchor/branch before peak winds; lee-side closures; dozers/modules pre-positioned; night holds.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mini">
+        The same logic fits the Virginia Piedmont/Tidewater fall pattern: FFWI ≳ 50 + multiple dry days + high human ignition pressure → staggered patrols, surge engines/tenders, and tighter public messaging windows.
+      </div>
+
+      <div class="check" style="margin-top:10px">
+        <strong>Pro tip:</strong> Wire simple thresholds to flags—<em>Elevated</em> when the ratio flirts with 1, <em>Critical</em> when it crosses. People act faster when the dashboard speaks plainly.
+      </div>
+    </section>
+
+    <!-- Chapter 5 -->
+    <section class="chunk">
+      <div class="chapter">Chapter 5</div>
+      <h3>From Black Holes to Backyards (where to apply it)</h3>
+      <p class="big">
+        GHT isn’t just for scientists. It’s a pocket lens you can aim at a lot of modern life.
+        Here are places it helps right away—and how to read the gauge in each.
+      </p>
+
+      <div class="grid3">
+        <div>
+          <h4>Networks & Platforms</h4>
+          <ul>
+            <li><strong>Flow:</strong> requests/sec, data rates, concurrent users</li>
+            <li><strong>Capacity:</strong> bandwidth, CPU, queue depth, DB connections</li>
+            <li><strong>Soft horizon:</strong> rate limiting, graceful degradation, circuit breakers</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Cities & Logistics</h4>
+          <ul>
+            <li><strong>Flow:</strong> vehicles/hour, shipments/day</li>
+            <li><strong>Capacity:</strong> lanes, docks, staffing, storage</li>
+            <li><strong>Soft horizon:</strong> metering, timed windows, overflow lots</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Wildfire & Land</h4>
+          <ul>
+            <li><strong>Flow:</strong> energy spread (wind × dryness)</li>
+            <li><strong>Capacity:</strong> fuel moisture, crew access, daylight, aviation</li>
+            <li><strong>Soft horizon:</strong> buffers, wet lines, closures, burn windows</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div>
+          <h4>Healthcare & Queues</h4>
+          <ul>
+            <li><strong>Flow:</strong> arrivals/hour</li>
+            <li><strong>Capacity:</strong> staff, beds, rooms</li>
+            <li><strong>Soft horizon:</strong> triage routing, telehealth overflow</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Personal Bandwidth</h4>
+          <ul>
+            <li><strong>Flow:</strong> tasks/day, interruptions/hour</li>
+            <li><strong>Capacity:</strong> hours, energy, focus</li>
+            <li><strong>Soft horizon:</strong> calendar buffers, “no-meeting” blocks</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Teams & Projects</h4>
+          <ul>
+            <li><strong>Flow:</strong> incoming asks, feature load</li>
+            <li><strong>Capacity:</strong> people, code health, test coverage</li>
+            <li><strong>Soft horizon:</strong> WIP limits, release trains, feature flags</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="warn">
+        <strong>Common trap:</strong> Measuring flow precisely but guessing capacity. People overestimate
+        what a system can <em>sustain</em>, not just what it can do on a good day. Be conservative on capacity.
+      </div>
+
+      <div class="crit" style="margin-top:10px">
+        <strong>Serious note:</strong> In safety contexts (wildfire, evacuation, power), treat horizons as guardrails.
+        Early, small interventions beat late, heroic ones every time.
+      </div>
+    </section>
+
+    <!-- Chapter 6 -->
+    <section class="chunk">
+      <div class="chapter">Chapter 6</div>
+      <h3>Why This Theory Is Needed (and timely)</h3>
+      <p>
+        Modern systems run hot. Climate adds volatility, infrastructure ages, demand spikes, and our tools spread
+        information faster than our buffers grow. “Just try harder” is not a strategy; it’s a recipe for brittle failures.
+        GHT gives a simple mental model for designing <em>graceful limits</em>.
+      </p>
+      <ul>
+        <li><strong>Predictive power:</strong> The ratio lets you forecast horizons before failure.</li>
+        <li><strong>Design focus:</strong> Once you spot the boundary, you can change its shape—soften it, move it, widen it.</li>
+        <li><strong>Cross-domain language:</strong> Fire crews, network engineers, and city planners can use the same playbook.</li>
+      </ul>
+
+      <div class="check">
+        <strong>Put bluntly:</strong> If you can estimate Flow and Capacity, you can prevent a lot of problems.
+        And when prevention isn’t possible, you can at least choose the way things fail.
+      </div>
+    </section>
+
+    <!-- Chapter 7 -->
+    <section class="chunk">
+      <div class="chapter">Chapter 7</div>
+      <h3>How To Apply GHT Tomorrow Morning (a tiny checklist)</h3>
+      <ol>
+        <li><strong>Pick one system you care about:</strong> a team, a road, a server, a hillside.</li>
+        <li><strong>Name your Flow and Capacity:</strong> even rough numbers. Write them down.</li>
+        <li><strong>Draw a gauge:</strong> mark 0.9, 1.0, 1.1. Where are you now? When do you cross 1?</li>
+        <li><strong>Add a soft horizon:</strong> rate-limit, buffer, fuse, pre-stage, reschedule.</li>
+        <li><strong>Watch and learn:</strong> if the horizon forms, how did it form? Can you move it earlier or make it gentler?</li>
+      </ol>
+      <p class="mini">No lab coat required. Curiosity and a pen will do.</p>
+    </section>
+
+    <!-- Chapter 8 -->
+    <section class="chunk">
+      <div class="chapter">Chapter 8</div>
+      <h3>Light Math Appendix (for the curious)</h3>
+      <p>
+        A few friendly expressions you can actually use without scaring your friends:
+      </p>
+      <ul>
+        <li><strong>Surface longwave up:</strong> <code>LW↑ = ε_s σ T_s^4</code> — ground radiative output.</li>
+        <li><strong>Atmospheric longwave down:</strong> <code>LW↓ = ε_a σ T_a^4</code> — sky “blanket” warmth.</li>
+        <li><strong>Net longwave:</strong> <code>LW_net = LW↓ − LW↑</code> — negative = cooling; positive = warming.</li>
+        <li><strong>Fire radiant flux (simple):</strong> <code>q_rad = F τ ε_f σ (T_f^4 − T_t^4)</code> — heat reaching a target from flames.</li>
+        <li><strong>Black hole radius (Schwarzschild):</strong> <code>r = 2GM / c²</code> — a dramatic example of a threshold.</li>
+      </ul>
+      <p class="mini">
+        If you want to play, open the <a href="index.html#backrad">Back-Radiation Calculator</a> and drag the sliders.
+        You’ll feel how the variables nudge the outcome.
+      </p>
+    </section>
+
+    <!-- Closing -->
+    <section class="chunk">
+      <div class="chapter">Closing</div>
+      <h3>What a Horizon Really Is (and why it’s kind)</h3>
+      <p class="big">
+        A horizon is the world’s way of protecting order when we hit a limit. Not a failure; a boundary with a job.
+        If we respect it, it will warn us early. If we design with it, systems get kinder at the edges.
+      </p>
+      <p>
+        Keep the lens handy. When something feels stuck, look for the ratio. Where’s the flow? Where’s the capacity?
+        Where would a soft horizon make life easier—for people, for networks, for landscapes? That’s General Horizon Theory:
+        clarity about limits so we can do brave things, gently.
+      </p>
+      <div class="cta">
+        <a class="button" href="#toolkit">Jump to Toolkit</a>
+        <a class="button" href="index.html#backrad">Open the Calculator</a>
         <a class="button" href="index.html">Back to Main Site</a>
       </div>
     </section>
-
-    <!-- Big idea -->
-    <section class="chunk">
-      <h3>Big Idea (the one sentence version)</h3>
-      <p><strong>When <em>Flow</em> pushes past <em>Capacity</em>, systems create a boundary — a <em>horizon</em> — so things don’t fall apart.</strong></p>
-      <div class="figure">
-        <img src="assets/images/coffee_overflow.svg" width="300" alt="Coffee horizon"/>
-        <div class="small">Coffee cup brim = horizon. You pour past the brim → instant boundary (overflow).</div>
-      </div>
-    </section>
-
-    <!-- Everyday analogies -->
-    <section class="chunk">
-      <h3>Everyday: five quick pictures</h3>
-      <div class="grid2">
-        <div>
-          <p><span class="num">1</span><strong>Traffic</strong> — When cars/hour &gt; road capacity, the jam front is a “movement horizon.”</p>
-          <div class="figure"><img src="assets/images/traffic_horizon.svg" width="280" alt="Traffic"/></div>
-        </div>
-        <div>
-          <p><span class="num">2</span><strong>Networks</strong> — Packets exceed a router’s buffer → a drop/queue boundary: info can’t get through.</p>
-          <div class="figure"><img src="assets/images/network_horizon.svg" width="280" alt="Network"/></div>
-        </div>
-        <div>
-          <p><span class="num">3</span><strong>Plasma</strong> — Too much energy at an interface forms a sheath/shock that acts like a fence.</p>
-        </div>
-        <div>
-          <p><span class="num">4</span><strong>Fog/Smoke</strong> — Light can’t propagate: a visual horizon. Your headlights hit a white wall.</p>
-        </div>
-        <div>
-          <p><span class="num">5</span><strong>Black holes</strong> — Gravity packs so tight the escape speed hits light speed: the <em>event horizon</em>.</p>
-          <div class="figure"><img src="assets/images/blackhole_horizon.svg" width="280" alt="Event horizon"/></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Variables (light math) -->
-    <section class="chunk vars">
-      <h3>Light Math (labels you won’t hate)</h3>
-      <p><code>Flow</code> = how much you push per unit time (cars/hr, Mbps, liters/min, acres/day).<br/>
-         <code>Capacity</code> = what the system can safely carry (lane throughput, link bandwidth, pipe size, crew bandwidth).<br/>
-         <code>Horizon</code> = the boundary that appears when Flow ≳ Capacity.</p>
-<pre><code>Heuristic:  if  Flow / Capacity  ≳ 1  →  Horizon forms
-</code></pre>
-      <p class="mini">Not calculus — just a ratio near 1. When the speedometer kisses the red, expect a boundary to pop up.</p>
-    </section>
-
-    <!-- How to predict -->
-    <section class="chunk">
-      <h3>How to Predict Horizons (the three-step loop)</h3>
-      <ol>
-        <li><strong>Watch the ratio:</strong> put <code>Flow/Capacity</code> on a gauge (mark 0.9, 1.0, 1.1).</li>
-        <li><strong>Track “pushers” and “erasers”:</strong>
-          <ul>
-            <li>Pushers (raise Flow): wind, drought, demand spikes, high ignition pressure.</li>
-            <li>Erasers (reduce Capacity): fatigue, access limits, buffer fill, outages.</li>
-          </ul>
-        </li>
-        <li><strong>Design soft horizons:</strong> buffers/fuses so hitting the limit bends, not breaks, the system.</li>
-      </ol>
-      <div class="check"><strong>Result:</strong> you get early warnings, graceful slowdowns, and fewer “oh no” moments.</div>
-    </section>
-
-    <!-- Back-radiation: the friendly version -->
-    <section class="chunk">
-      <h3>Back-Radiation, explained like you’re busy</h3>
-      <p><strong>Two flavors:</strong></p>
-      <p><span class="num">A</span><strong>Sky → Ground:</strong> the sky acts like a light blanket. Clear &amp; dry nights leak heat (cooling). Cloudy &amp; humid bounce heat back (less cooling).</p>
-      <p class="mini"><em>Math vibe:</em> Ground radiates up; sky radiates down. The difference is your net longwave — that’s what fuels feel overnight.</p>
-      <p><span class="num">B</span><strong>Fire → Fuel:</strong> flames “glow” heat onto nearby stuff. Bigger/hotter/closer flames with clear air = more radiant shove → faster pre-heating → easier ignition.</p>
-      <p class="mini"><em>Use it:</em> step away a few meters, add a moist barrier, or break line-of-sight and you slash radiant load.</p>
-      <div class="check">On the main site, the calculator shows both flavors with sliders and plain labels.</div>
-    </section>
-
-    <!-- Examples -->
-    <section class="chunk">
-      <h3>Real-world Examples (bite-size)</h3>
-      <div class="grid2">
-        <div>
-          <h4>Hawaii wind-driven fires</h4>
-          <ul>
-            <li><strong>Pushers:</strong> extreme gusts, very low RH, cured grasses, utility faults.</li>
-            <li><strong>Erasers:</strong> unsafe ops in hurricane-force gusts, comms/egress stress.</li>
-            <li><strong>Triggers:</strong> pre-emptive de-energization; upwind staging; corridor hardening; multi-channel alerts.</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Bald Mountain (VA, 2025)</h4>
-          <ul>
-            <li><strong>Pushers:</strong> post-frontal NW gusts, low RH, receptive fine fuels, spotting terrain.</li>
-            <li><strong>Erasers:</strong> steep access, narrow burnout windows, night limits.</li>
-            <li><strong>Triggers:</strong> indirect + anchor/branch; lee-side closures; dozer/module pre-position.</li>
-          </ul>
-        </div>
-      </div>
-      <p class="mini">Same playbook also fits Piedmont/Tidewater fall pattern (FFWI &ge; 50 + dry days + human ignitions).</p>
-    </section>
-
-    <!-- Quick FAQ -->
-    <section class="chunk">
-      <h3>FAQ (fast answers)</h3>
-      <p><span class="q">“Is this just a metaphor?”</span><br/>No — the ratio predicts <em>where</em> boundaries form. The metaphors help you feel it first.</p>
-      <p><span class="q">“Do I need equations?”</span><br/>Only enough to know which way the needle moves. The dashboard matters more than the derivation.</p>
-      <p><span class="q">“What do I actually do?”</span><br/>Raise capacity, smooth the flow, or add buffers. Pick the cheapest lever that moves the ratio away from 1.</p>
-    </section>
-
-    <p class="mini">Want the nuts-and-bolts? See the <a href="docs/predictive_toolkit.md">Predictive Toolkit</a> or the <a href="index.html#backrad">Back-Radiation Calculator</a>.</p>
 
     <p class="footer">© 2025 General Horizon Theory Companion. Friendly mode, activated.</p>
   </div>
